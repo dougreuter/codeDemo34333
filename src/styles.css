@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+*,:after,:before {
+    box-sizing: border-box
+}
+body {
+    margin: 0;
+    font-family: IBM Plex Sans Condensed,sans-serif;
+    font-size: .9375rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: #231f20;
+    text-align: left;
+    background-color: #fff;
+  }
+  .container-fluid-global {
+    background-color: #fff;
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 1140px;
+    min-height: 800px;
+    margin-right:  auto;
+    margin-left:  auto;
+}

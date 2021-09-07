@@ -1,0 +1,27 @@
+<div class="pt-4">
+    <div class="ng-star-inserted">
+        <div class="row mr-0" *ngIf="result">
+            <div *ngFor="let item of ((result | async) | filterminmax : minMax ) "
+                class="col-6 col-sm-4 col-lg-3  pr-0 pb-0 mb-0 d-flex align-items-stretch">
+                <div class="card part-badge part-badge-grid p-2 pt-4 ng-star-inserted" style="width: 18rem;">
+                    <img class="card-img-top"
+                        [src]="mediaServer + item.media.url +'.' + item.media.file.extension + '?x=170&y=170&b=&t=image/png'"
+                        alt="Card image cap">
+                    <div class="card-body  pb-0 mb-0">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text">{{item.brand}}</p>
+                        <p class="card-text" *ngIf="item.priceMin===item.priceMax">{{item.priceMin | currency}}</p>
+                        <p class="card-text  pb-0 mb-0" *ngIf="item.priceMin!==item.priceMax">{{item.priceMin |
+                            currency}} - {{item.priceMax | currency}}</p>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+       
+    </div>
+    <div class="row mr-0" *ngIf="((result | async) | filterminmax : minMax )?.length==0">
+        <p> No results found.</p>
+    </div>
+</div>

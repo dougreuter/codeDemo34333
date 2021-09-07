@@ -1,0 +1,16 @@
+<div class="mx-2 my-auto d-inline w-50" *ngIf="parentFormGroup" [formGroup]="parentFormGroup">
+    <label for="name" class="control-label mr-sm-2 mb-0 small font-weight-bold">Filter By Price</label>
+    <div class="input-group" formGroupName="partsFilterGroup">
+        <input class="form-control mr-sm-2" type="number" placeholder="Minimum Price" min="0" aria-label="Minimum Price" formControlName="min">
+        <input class="form-control mr-sm-2"  type="number" placeholder="Maximum Price" min="0" aria-label="Maximum Price" formControlName="max">
+        <button class="btn btn-primary my-2 my-sm-0" (click)="filterClick()">Filter</button>
+    </div>
+    <div class="col-sm-6" *ngIf="filterGroup?.errors">
+        <small id="passwordHelp" class="text-danger">
+            {{ errorMessage(filterGroup?.errors)}}
+        </small>      
+      </div>
+</div>
+ 
+
+ 

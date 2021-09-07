@@ -1,0 +1,10 @@
+<div class="container-fluid-global">
+    <nav class="navbar navbar-expand-sm  ">
+        <a class="navbar-brand" href="#">
+            <img class="logo ng-star-inserted" height="40" src="assets/parts_unlimited_logo.svg">
+        </a>
+        <app-part-filter [parentFormGroup]="searchForm" (onFilterButtonClick)="onFilterButtonClick($event)">
+        </app-part-filter>
+    </nav>
+    <app-part-grid [result]="result$" [minMax]="minMax"></app-part-grid>
+</div>
